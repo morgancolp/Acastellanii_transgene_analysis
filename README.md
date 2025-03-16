@@ -1,5 +1,18 @@
 # Acastellanii_transgene_analysis
 
+## Searching for possible transgene integrations
+
+This process was performed independently for the nanopore read sets from 'mixed transformants' and each of the clones analyzed in the study. 
+
+1. On a computer or server with BLAST installed, `blastn -query <transformant reads> -db <wild-type genome> -out <outfile> -outfmt 6` to identify all reads with hits to the plasmid and output in tabulated format.
+
+2. `python plasmidreads.py <tabulated BLAST output> <output FASTA>` to retrieve all of the reads identified above in a separate multi-FASTA file.
+
+3. `qsub minimap2.sh` to map the plasmid-matching reads against the reference genome with soft-clipping allowed.
+
+4. The mapping was visualized in IGV as an easy way to browse each potential transgene integration. Because soft-clipping was allowed, reads containing both plasmid and genomic sequence map to their corresponding genomic locus without interference from the plasmid-derived portion of the read. BLAST was used to double-check that the soft-clipped part was actually plasmid sequence, and then the putative integrations were recorded manually in a spreadsheet.
+
+
 ## Rate of read chimerism analysis
 
 ### 
