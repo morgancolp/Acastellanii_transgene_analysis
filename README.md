@@ -10,7 +10,9 @@ This process was performed independently for the nanopore read sets from 'mixed 
 
 3. `qsub minimap2.sh` to map the plasmid-matching reads against the reference genome with soft-clipping allowed.
 
-4. The mapping was visualized in IGV as an easy way to browse each potential transgene integration. Because soft-clipping was allowed, reads containing both plasmid and genomic sequence map to their corresponding genomic locus without interference from the plasmid-derived portion of the read. BLAST was used to double-check that the soft-clipped part was actually plasmid sequence, and then the putative integrations were recorded manually in a spreadsheet.
+4. The mapping was visualized in IGV as an easy way to browse each potential transgene integration and record them manually in a spreadsheet.
+
+  Because soft-clipping was allowed, reads containing both plasmid and genomic sequence map to their corresponding genomic locus without interference from the plasmid-derived portion of the read. BLAST was used to double-check that the soft-clipped part was actually plasmid sequence. I did this manually by comparing the putative integration reads with the plasmid sequence in the BLAST web interface but there is no reason a combination of command line BLAST and scripts could not be used to streamline the process.
 
 
 ## Rate of read chimerism analysis
