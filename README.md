@@ -23,9 +23,9 @@ This process was performed independently for the nanopore read sets from 'mixed 
 
 2. `grep -v c350_g1_i2 LT9_vs_comb.paf > LT9_vs_comb_no_plasmid.paf` to produce a new PAF file without the mappings to the plasmid. 
 
-3. `cut -f1 LT9_vs_comb_no_plasmid.paf | sort | uniq -c | sort -n > LT9numbersforpafswithoutplasmid` to produce a text file with counts of each read represented in the output of the previous step.
+3. `cut -f1 LT9_vs_comb_no_plasmid.paf | sort | uniq -c | sort -n > LT9_mappings_per_read` to produce a text file with counts of each read represented in the output of the previous step.
 
-4. `grep " 2 " LT9numbersforpafswithoutplasmid > LT9doubleswithoutplasmid` to retrieve a list of read IDs for which exactly two mappings are found.
+4. `grep " 2 " LT9_mappings_per_read > LT9_double_map_reads` to retrieve a list of read IDs for which exactly two mappings are found.
    
 5. `perl chim_reads.pl | wc -l` running this perl script will list all unique reads that satisfy the chimerism criteria. Piping into `wc -l` will output the number of reads in the 'lines' field of the wc output.
 
