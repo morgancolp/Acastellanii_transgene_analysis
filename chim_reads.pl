@@ -2,7 +2,7 @@
 
 %HOLD=();
 
-open (FI,"C1_deep_vs_comb_no_plasmid.paf");
+open (FI,"<no plasmid paf file>");
 while (<FI>)
 {
 $fline=$_; #assigning each line of the PAF to $fline
@@ -26,7 +26,7 @@ close FI;
 
 
 
-open (FI,"doubleswithoutplasmid"); #opening a list of read IDs that have only 2 mappings to the genome and do not contain plasmid sequence
+open (FI,"<file of reads with 2 mappings>"); #opening a list of read IDs that have only 2 mappings to the genome and do not contain plasmid sequence
 while (<FI>)
 {
 $fline=$_; #assigning each line of the list to $fline
