@@ -1,4 +1,4 @@
-# Acastellanii_transgene_analysis
+# Bioinformatic analysis of artificial transgenes in **Acanthamoeba castellanii**
 
 This repository serves to document the bioinformatic analyses conducted for the study 'The fate of artificial transgenes in **Acanthamoeba castellanii**' (full reference to come). The process as performed for the study was somewhat ad hoc and as such there is no fully formed pipeline reported here, although some or all steps may be amenable to further automation. Analyses were run on an HPC at Dalhousie University that uses an Oracle Grid Engine queue system and anaconda-based Python environment management, so most bash (.sh) scripts are formatted as submission scripts for this queue system and may need to be adapted to the needs of the user. The usage of the bioinformatic tools themselves can be found after the initial block of text used by the queueing system in these scripts.
 
