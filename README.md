@@ -37,6 +37,5 @@ This process was performed independently for the nanopore read sets from 'mixed 
 
 9. Multiply the estimated rate of chimerism by the number of plasmid-mapping reads to estimate the number of putative plasmid-genome junctions that could be explained by artificially chimeric reads.
 
-## Illumina validation of nanopore reads representing putative integrations
 
 
