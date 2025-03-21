@@ -6,11 +6,11 @@ Associated data: https://doi.org/10.5281/zenodo.15019835
 
 ## Searching for possible transgene integrations
 
-This process was performed independently for the nanopore read sets from 'mixed transformants' and each of the clones analyzed in the study. 
+This process was performed independently for the nanopore read sets from 'mixed transformants' and each of the clones analyzed in the study. For each read set, plasmidreads.py and minimap2_integrations.sh should be modified accordingly. File names are currently hard-coded into these scripts, but users may prefer modifying the Python script to accept options on the command line.
 
 1. On a computer or server with BLAST installed, `blastn -query <transformant reads> -db <wild-type genome> -out <outfile> -outfmt 6` to identify all reads with hits to the plasmid and output in tabulated format.
 
-2. `python plasmidreads.py <tabulated BLAST output> <output FASTA>` to retrieve all of the reads identified above in a separate multi-FASTA file.
+2. `python plasmidreads.py` to retrieve all of the reads identified above in a separate multi-FASTA file.
 
 3. `qsub minimap2_integrations.sh` to map the plasmid-matching reads against the reference genome using [minimap2](https://github.com/lh3/minimap2) with soft-clipping allowed, using the script [minimap2_integrations.sh](minimap2_integrations.sh)
 
@@ -21,7 +21,7 @@ This process was performed independently for the nanopore read sets from 'mixed 
 
 ## Rate of read chimerism analysis
 
-### 
+These steps use the analysis of Clone LT9 and its associated file names as an example. The only necessary change to the commands below for analysis of another clone is to replace any file name starting with LT9 with the relevant file name, and to modify minimap2_chimerism.sh and chim_reads.pl accordingly. File names are currently hard-coded into these scripts, but users may prefer modifying the perl script to accept options on the command line. 
 
 1. `qsub minimap2_chimerism.sh` to map nanopore reads against the reference genome plus the plasmid sequence using [minimap2](https://github.com/lh3/minimap2) with [minimap2_chimerism.sh](minimap2_chimerism.sh)
 
